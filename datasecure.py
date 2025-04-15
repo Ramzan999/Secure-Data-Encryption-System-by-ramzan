@@ -108,7 +108,7 @@ elif choice == "Login":
         st.error(f"Invalide Credentials! Attempts left: {remaining}")
 
         if st.session_state.failed_attempts >= 3:
-          st.session_state.lockout.time = time.time() + LOCKOUT_DURATION
+          st.session_state.lockout_time = time.time() + LOCKOUT_DURATION
           st.error("To many failed attempts. Locked for 60 seconds")
           st.stop()
 
